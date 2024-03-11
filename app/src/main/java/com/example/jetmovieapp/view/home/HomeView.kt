@@ -25,8 +25,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.jetmovieapp.MovieRow
+import com.example.jetmovieapp.model.Movie
+import com.example.jetmovieapp.model.getMovies
 import com.example.jetmovieapp.nav.MovieViewEnum
+import com.example.jetmovieapp.widgets.MovieRow
 
 @Composable
 fun HomeView(navController: NavController) {
@@ -58,7 +60,7 @@ fun HomeView(navController: NavController) {
 fun MainContent(
     navController: NavController,
     padding: PaddingValues = PaddingValues(),
-    movieList: List<String> = listOf("Avatar", "300", "Harry Potter", "Life")
+    movieList: List<Movie> = getMovies()
 ) {
     Column(modifier = Modifier.padding(padding)) {
         LazyColumn(
