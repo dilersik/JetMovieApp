@@ -23,7 +23,7 @@ fun MovieNav() {
                 type = NavType.StringType
             })
         ) {
-            DetailView(navController, movieData = it.arguments?.getString("movie"))
+            DetailView(navController, movieId = it.arguments?.getString("movie"))
         }
     }
 }
